@@ -31,12 +31,21 @@ public class TiendaProductoTP {
         this.nombre = nombre;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setPrecio(double nuevoprecio) {
+        if (nuevoprecio < 0){
+            System.out.println("Error: no se puede ingresar un precio negativo");
+        }
+        this.precio = nuevoprecio;                          
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setCantidad(int nuevacantidad) {
+        if (nuevacantidad <0){
+            System.out.println("Error: No se puede ingresar una cantidad negativa");
+        }
+        else{
+            this.cantidad = nuevacantidad ;
+        }
+        
     }
     
     // Método para mostrar la información del producto
@@ -46,7 +55,5 @@ public class TiendaProductoTP {
         System.out.println("Cantidad disponible: " + cantidad);
     }
     
-    public static void main(String[] args) {
-        // Código de la aplicación
-    }
+   
 }
